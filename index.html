@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Цветочный сад</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-transparent z-50">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl flex font-bold text-rose-400">Цветочный сад <img src="img/Без названия58_20250528144235.png" alt="Логотип" class="h-20"> </a>
+      <div class="hidden md:flex space-x-6">
+        <a href="#about" class="text-rose-500 hover:text-rose-600">О нас</a>
+        <a href="#new" class="text-rose-500 hover:text-rose-600">Новинки</a>
+        <a href="#partners" class="text-rose-500 hover:text-rose-600">Партнеры</a>
+        <a href="#reviews" class="text-rose-500 hover:text-rose-600">Отзывы</a>
+        <a href="catalog.html" class="text-rose-500 hover:text-rose-600">Каталог</a>
+        <a href="profile.html" class="text-rose-500 hover:text-rose-600">Профиль</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-rose-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-rose-100 flex flex-col items-center space-y-4 py-4">
+      <a href="#about" class="text-rose-500 hover:text-rose-600">О нас</a>
+      <a href="#new" class="text-rose-500 hover:text-rose-600">Новинки</a>
+      <a href="#partners" class="text-rose-500 hover:text-rose-600">Партнеры</a>
+      <a href="#reviews" class="text-rose-500 hover:text-rose-600">Отзывы</a>
+      <a href="catalog.html" class="text-rose-500 hover:text-rose-600">Каталог</a>
+      <a href="profile.html" class="text-rose-500 hover:text-rose-600">Профиль</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-20">
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-rose-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-rose-500 mb-6">О нас</h2>
+        <p class="text-gray-700 mb-4">Мы — "Цветочный сад", место, где каждый букет создан с любовью. Наша миссия — приносить радость через красоту цветов. Наш путь начался в 2015 году, когда небольшая семейная мастерская в центре города решила делиться красотой природы с каждым желающим.</p>
+        <div class="flex flex-col md:flex-row items-center mb-6">
+          <p class="text-gray-700 flex-1">Цветы — это не просто растения, это язык эмоций. Знаете ли вы, что розы символизируют любовь и уважение, а их цвет может рассказать целую историю? Красные — страсть, белые — чистота, а желтые — дружба. Мы тщательно подбираем каждый цветок, чтобы ваш букет говорил именно то, что вы хотите.</p>
+          <img class="w-48 h-48 object-cover rounded-lg ml-0 md:ml-4 mt-4 md:mt-0" src="img/020031972bc5326d25b8df5de0ec791c.jpg" alt="Розы">
+        </div>
+        <p class="text-gray-700 mb-4">Наша команда начинала с маленького ларька на местном рынке. Мы мечтали создавать букеты, которые запоминаются. Со временем любовь к делу и поддержка клиентов позволили нам открыть уютный магазин, где каждый может найти вдохновение.</p>
+        <div class="flex flex-col md:flex-row-reverse items-center mb-6">
+          <p class="text-gray-700 flex-1">Лилии, например, ассоциируются с благородством и возрождением. Их аромат наполняет пространство теплом и уютом. Мы работаем с лучшими поставщиками, чтобы наши цветы были свежими и радовали вас как можно дольше.</p>
+          <img class="w-48 h-48 object-cover rounded-lg mr-0 md:mr-4 mt-4 md:mt-0" src="img/2663aa13e62562a0f828f9b51f5922cd.jpg" alt="Лилии">
+        </div>
+        <p class="text-gray-700">Сегодня "Цветочный сад" — это не только букеты, но и мастер-классы, оформление мероприятий и даже дополненная реальность, чтобы вы могли увидеть букет в вашем интерьере. Мы гордимся тем, что продолжаем расти, сохраняя тепло и заботу, с которых всё начиналось.</p>
+      </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new" class="py-16 bg-rose-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-rose-500 mb-6">Наши новинки</h2>
+        <div class="relative flex items-center">
+          <button id="prev-slide" class="absolute left-0 z-10 bg-rose-300 text-white p-2 rounded-full hover:bg-rose-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <div id="carousel" class="flex overflow-hidden w-full">
+            <div class="carousel-item min-w-[350px] mx-2 transition-all duration-300 md:min-w-[150]">
+              <div class="relative rounded-full overflow-hidden w-48 h-48 group hover:w-64 transition-all duration-300 hover:h-auto hover:rounded-lg hover:shadow-lg">
+                <img src="img/c1cda3aff5c27e59ffedaa4b27d87074.jpg" alt="Букет Романтика" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                  <h3 class="text-xl font-semibold">Романтика</h3>
+                  <p>Нежный букет из смешения красных и белых тонов.</p>
+                  <p class="mt-2">3500 ₽</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item min-w-[350px] mx-2 transition-all duration-300 md:min-w-[150]">
+              <div class="relative rounded-full overflow-hidden w-48 h-48 group hover:w-64 hover:h-auto hover:rounded-lg hover:shadow-lg">
+                <img src="img/b8acf79682a2768160f71a7fe3a8bfc1.jpg" alt="Букет Весна" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                  <h3 class="text-xl font-semibold">Весна</h3>
+                  <p>Яркий букет из ромашек, беленький и свежий.</p>
+                  <p class="mt-2">2800 ₽</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item min-w-[350px] mx-2 transition-all duration-300 md:min-w-[150]">
+              <div class="relative rounded-full overflow-hidden w-48 h-48 group hover:w-64 hover:h-auto hover:rounded-lg hover:shadow-lg">
+                <img src="img/a11ec0fdec10ba7c9c820d9823b68d65.jpg" alt="Букет Солнце" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                  <h3 class="text-xl font-semibold">Солнце</h3>
+                  <p>Солнечный букет из подсолнухов, всегда поднимет настроение, особенно пасмурным днем.</p>
+                  <p class="mt-2">3200 ₽</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item min-w-[350px] mx-2 transition-all duration-300 md:min-w-[150]">
+              <div class="relative rounded-full overflow-hidden w-48 h-48 group hover:w-64 hover:h-auto hover:rounded-lg hover:shadow-lg">
+                <img src="img/6256fc203dc58af30910040482e1391e.jpg" alt="Букет Нежность" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                  <h3 class="text-xl font-semibold">Нежность</h3>
+                  <p>Деликатный букет из пионов с нотками спокойствия.</p>
+                  <p class="mt-2">4000 ₽</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item min-w-[350px] mx-2 transition-all duration-300 md:min-w-[150]">
+              <div class="relative rounded-full overflow-hidden w-48 h-48 group hover:w-64 hover:h-auto hover:rounded-lg hover:shadow-lg">
+                <img src="img/d966357a2442f8285c3f7ea43aa5fc22.jpg" alt="Букет Радость" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                  <h3 class="text-xl font-semibold">Радость</h3>
+                  <p>Веселый букет из гербер.</p>
+                  <p class="mt-2">3000 ₽</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button id="next-slide" class="absolute right-0 z-10 bg-rose-300 text-white p-2 rounded-full hover:bg-rose-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+     <section id="partners" class="py-16 bg-rose-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-rose-500 mb-6 text-center">Наши партнеры</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="https://partner1.com" class="relative w-32 h-32 rounded-full overflow-hidden group">
+            <img src="img/d1d0bfeac4467a12816ddb460797a00a.jpg" alt="Партнер 1" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-sm font-semibold text-center">Flower Farm</span>
+            </div>
+          </a>
+          <a href="https://partner2.com" class="relative w-32 h-32 rounded-full overflow-hidden group">
+            <img src="img/beaef45df227580a739db2151f51f0f7.jpg" alt="Партнер 2" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-sm font-semibold text-center">Greenhouse Co</span>
+            </div>
+          </a>
+          <a href="https://partner3.com" class="relative w-32 h-32 rounded-full overflow-hidden group">
+            <img src="img/b581cc46bcbbd7154111671825a78244.jpg" alt="Партнер 3" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-sm font-semibold text-center">Bloom Supply</span>
+            </div>
+          </a>
+          <a href="https://partner4.com" class="relative w-32 h-32 rounded-full overflow-hidden group">
+            <img src="img/b547e3db9dcea6ba82ecf4d7ee0fbad8.jpg" alt="Партнер 4" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-sm font-semibold text-center">Petal Works</span>
+            </div>
+          </a>
+          <a href="https://partner5.com" class="relative w-32 h-32 rounded-full overflow-hidden group">
+            <img src="img/0b7d94f3a8ef2a567e5719381f8c420d.jpg" alt="Партнер 5" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-sm font-semibold text-center">Flora Market</span>
+            </div>
+          </a>
+          <a href="https://partner6.com" class="relative w-32 h-32 rounded-full overflow-hidden group">
+            <img src="img/fdb1ed3b46c6899dd167fb421654ceef.jpg" alt="Партнер 6" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-sm font-semibold text-center">Eco Blooms</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 bg-rose-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-rose-500 mb-6">Отзывы клиентов</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow flex items-start space-x-4">
+            <img src="https://via.placeholder.com/50" alt="Анна" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="text-rose-500 font-semibold">Анна</p>
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 20 20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+              </div>
+              <p class="text-gray-700 mt-2">"Прекрасные букеты, быстрая доставка! Заказала букет для подруги, и она была в восторге!"</p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow flex items-start space-x-4">
+            <img src="https://via.placeholder.com/50" alt="Михаил" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="text-rose-500 font-semibold">Михаил</p>
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+              </div>
+              <p class="text-gray-700 mt-2">"Отличный сервис! Цветы свежие, а флористы помогли подобрать идеальный букет для юбилея."</p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow flex items-start space-x-4">
+            <img src="https://via.placeholder.com/50" alt="Елена" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="text-rose-500 font-semibold">Елена</p>
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+              </div>
+              <p class="text-gray-700 mt-2">"Букет был красивым, но доставка немного задержалась. В остальном всё хорошо!"</p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow flex items-start space-x-4">
+            <img src="https://via.placeholder.com/50" alt="Ольга" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="text-rose-500 font-semibold">Ольга</p>
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 20 20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+              </div>
+              <p class="text-gray-700 mt-2">"Очень понравилось, как флористы учли все мои пожелания. Букет получился идеальным!"</p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow flex items-start space-x-4">
+            <img src="https://via.placeholder.com/50" alt="Дмитрий" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="text-rose-500 font-semibold">Дмитрий</p>
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.377 2.456a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.377-2.456a1 1 0 00-1.176 0l-3.377 2.456c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.47 8.597c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.97z"></path></svg>
+              </div>
+              <p class="text-gray-700 mt-2">"Заказал букет для мамы на день рождения. Она была счастлива, цветы простояли две недели!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AR Section -->
+     <section id="ar" class="py-16 bg-rose-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-rose-500 mb-6">Попробуйте букет в дополненной реальности</h2>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <div id="ar-controls" class="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 mb-4">
+            <button id="start-camera" class="bg-rose-300 text-white px-3 py-1 md:px-4 md:py-2 rounded hover:bg-rose-400 text-sm md:text-base">Открыть камеру</button>
+            <select id="bouquet-select" class="border border-rose-300 rounded px-3 py-1 md:px-4 md:py-2 text-sm md:text-base">
+              <option value="bouquet1">Букет "Романтика"</option>
+              <option value="bouquet2">Букет "Весна"</option>
+            </select>
+            <button id="save-image" class="bg-rose-300 text-white px-3 py-1 md:px-4 md:py-2 rounded hover:bg-rose-400 text-sm md:text-base" disabled>Сохранить</button>
+          </div>
+          <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" class="w-full h-96">
+            <a-marker preset="hiro">
+              <a-entity id="bouquet-model" gltf-model="#bouquet1"></a-entity>
+            </a-marker>
+            <a-entity camera></a-entity>
+          </a-scene>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-rose-100 py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div>
+        <p class="text-gray-700">Контакты: info@flower-garden.ru | +7 (123) 456-78-90</p>
+        <p class="text-gray-700">Разработчик: Flower Dev Team</p>
+        <p class="text-gray-700">Все права защищены © 2025</p>
+      </div>
+      <a href="index.html">
+        <img src="img/Без названия58_20250528144235.png" alt="Логотип" class="h-24">
+      </a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="ar.js"></script>
+  <script>
+    // Carousel functionality
+    const carousel = document.getElementById('carousel');
+    const prevButton = document.getElementById('prev-slide');
+    const nextButton = document.getElementById('next-slide');
+    let scrollPosition = 0;
+    const itemWidth = 200; // Width of each carousel item including margin
+
+    nextButton.addEventListener('click', () => {
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      if (scrollPosition < maxScroll) {
+        scrollPosition += itemWidth;
+        carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (scrollPosition > 0) {
+        scrollPosition -= itemWidth;
+        carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>

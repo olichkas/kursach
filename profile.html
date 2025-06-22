@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль - Цветочный сад</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-transparent z-50">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-rose-400">Цветочный сад</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="index.html#about" class="text-rose-500 hover:text-rose-600">О нас</a>
+        <a href="index.html#new" class="text-rose-500 hover:text-rose-600">Новинки</a>
+        <a href="index.html#partners" class="text-rose-500 hover:text-rose-600">Партнеры</a>
+        <a href="index.html#reviews" class="text-rose-500 hover:text-rose-600">Отзывы</a>
+        <a href="catalog.html" class="text-rose-500 hover:text-rose-600">Каталог</a>
+        <a href="profile.html" class="text-rose-500 hover:text-rose-600">Профиль</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-rose-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-rose-100 flex flex-col items-center space-y-4 py-4">
+      <a href="index.html#about" class="text-rose-500 hover:text-rose-600">О нас</a>
+      <a href="index.html#new" class="text-rose-500 hover:text-rose-600">Новинки</a>
+      <a href="index.html#partners" class="text-rose-500 hover:text-rose-600">Партнеры</a>
+      <a href="index.html#reviews" class="text-rose-500 hover:text-rose-600">Отзывы</a>
+      <a href="catalog.html" class="text-rose-500 hover:text-rose-600">Каталог</a>
+      <a href="profile.html" class="text-rose-500 hover:text-rose-600">Профиль</a>
+    </div>
+  </header>
+
+  <!-- Profile Section -->
+  <main class="pt-20">
+    <section class="py-16 bg-rose-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-rose-500 mb-6">Профиль</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Favorites -->
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h3 class="text-xl font-semibold text-rose-500 mb-4">Избранное</h3>
+            <div id="favorites-list" class="space-y-4">
+              <!-- Динамически заполняется -->
+            </div>
+          </div>
+          <!-- Cart -->
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h3 class="text-xl font-semibold text-rose-500 mb-4">Корзина</h3>
+            <div id="cart-list" class="space-y-4">
+              <!-- Динамически заполняется -->
+            </div>
+            <button id="order-btn" class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400 mt-4">Заказать</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Order Modal -->
+  <div id="order-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-lg max-w-md w-full">
+      <h3 class="text-xl font-semibold text-rose-500 mb-4">Оформление заказа</h3>
+      <div class="space-y-4">
+        <input type="text" id="order-name" placeholder="Имя" class="w-full border border-rose-300 rounded px-4 py-2">
+        <input type="text" id="order-address" placeholder="Адрес доставки" class="w-full border border-rose-300 rounded px-4 py-2">
+        <input type="tel" id="order-phone" placeholder="Телефон" class="w-full border border-rose-300 rounded px-4 py-2">
+        <div class="flex justify-end space-x-4">
+          <button id="cancel-order" class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400">Отмена</button>
+          <button id="submit-order" class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400">Подтвердить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-rose-100 py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div>
+        <p class="text-gray-700">Контакты: info@flower-garden.ru | +7 (123) 456-78-90</p>
+        <p class="text-gray-700">Разработчик: Flower Dev Team</p>
+        <p class="text-gray-700">Все права защищены © 2025</p>
+      </div>
+      <a href="index.html">
+        <img src="https://via.placeholder.com/100" alt="Логотип" class="h-12">
+      </a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
